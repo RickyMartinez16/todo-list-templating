@@ -14,6 +14,7 @@ let adds = []
 //make variable to hold the items we add to the work list
 let workItems = []
 
+//make variable to hold the items for sams list
 let samsItems = []
 
 //able to use EJS
