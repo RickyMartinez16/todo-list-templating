@@ -34,9 +34,15 @@ app.get("/work", (req, res) => {
 })
 
 app.post("/", (req, res) => {
-    add = req.body.toDoAdd
-    adds.push(add)
-    res.redirect("/")
+    let add = req.body.toDoAdd
+
+    if(req.body.list === "Work"){
+        workItems.push(add)
+        res.redirect("/work")
+    } else {
+        adds.push(add)
+        res.redirect("/")
+    }
 })
 
 app.post("/work", (req, res) => {
