@@ -5,6 +5,8 @@ const app = express()
 
 let adds = []
 
+let workItems = []
+
 app.set("view engine", "ejs")
 
 app.use(bodyParser.urlencoded({extended:true}))
@@ -24,13 +26,23 @@ app.get("/", (req, res) => {
     let day = today.toLocaleDateString("en-US" , options)
 
    
-    res.render("list", {kindOfDay: day, newListItems: adds})
+    res.render("list", {listTitle: day, newListItems: adds})
+})
+
+app.get("/work", (req, res) => {
+    res.render("list", {listTitle: "Work List", newListItems: workItems})
 })
 
 app.post("/", (req, res) => {
     add = req.body.toDoAdd
     adds.push(add)
     res.redirect("/")
+})
+
+app.post("/work", (req, res) => {
+    workAdd = req.body.toDoAdd
+    workItems.push(workAdd)
+    res.redirect("/work")
 })
 
 app.listen(3000, () => {
