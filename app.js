@@ -29,6 +29,10 @@ app.get("/", (req, res) => {
     res.render("list", {listTitle: day, newListItems: adds})
 })
 
+app.get("/about", (req, res) => {
+    res.render("about")
+})
+
 app.get("/work", (req, res) => {
     res.render("list", {listTitle: "Work List", newListItems: workItems})
 })
