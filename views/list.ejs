@@ -13,12 +13,14 @@
         <h1><%= kindOfDay %> ToDo List ! </h1>
     </div>
 
-    <ul>
-
-        <% for(let i = 0; i < newListItems.length; i++){ %>
-             <li><%=newListItems[i]%></li> 
-       <% } %> 
-    </ul>
+    <div class="box">
+            <% for(let i = 0; i < newListItems.length; i++){ %>
+                <div class="item">
+                    <li><%=newListItems[i]%></li> 
+                </div>
+           <% } %> 
+        
+    </div>
 
     <form class="" action="/" method="post">
         <label for="fname">Add to list:</label><br>
