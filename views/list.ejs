@@ -16,16 +16,19 @@
     <div class="box">
             <% for(let i = 0; i < newListItems.length; i++){ %>
                 <div class="item">
-                    <li><%=newListItems[i]%></li> 
+                    <input type="checkbox"  >
+                    <p><%=newListItems[i]%></p> 
                 </div>
            <% } %> 
         
+
+           <form class="item" action="/" method="post">
+            <label for="fname">Add to list:</label><br>
+            <input type="text" id="toDoAdd" name="toDoAdd" ><br>
+            <input type="submit" value="Add">
+          </form> 
+
     </div>
 
-    <form class="" action="/" method="post">
-        <label for="fname">Add to list:</label><br>
-        <input type="text" id="toDoAdd" name="toDoAdd" ><br>
-        <input type="submit" value="Add">
-      </form> 
 </body>
 </html>
