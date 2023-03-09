@@ -46,15 +46,22 @@ app.get("/", (req, res) => {
     res.render("list", {listTitle: day, newListItems: adds})
 })
 
+
+//GET route for /about 
 app.get("/about", (req, res) => {
+    //render the about ejs file
     res.render("about")
 })
 
+//GET route for /work page
 app.get("/work", (req, res) => {
+    //render the "list" ejs file, pass in Work List for the list title var and new listItems as the workItems array
     res.render("list", {listTitle: "Work List", newListItems: workItems})
 })
 
+//POST route for the / home route
 app.post("/", (req, res) => {
+    //make a var for the added item. parse thru the request body and find the toDoAdd that we named from the submit
     let add = req.body.toDoAdd
 
     if(req.body.list === "Work"){
