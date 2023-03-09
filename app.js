@@ -11,12 +11,20 @@ const app = express()
 //make varirable to hold the items we add to the todo list
 let adds = []
 
+//make variable to hold the items we add to the work list
 let workItems = []
 
+//able to use EJS
 app.set("view engine", "ejs")
 
+//able to use body parser
 app.use(bodyParser.urlencoded({extended:true}))
+
+//use the public folder to get the css
 app.use(express.static("public"))
+
+
+//ROUTES-------------------------------------------
 
 app.get("/", (req, res) => {
     
