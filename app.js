@@ -64,11 +64,16 @@ app.post("/", (req, res) => {
     //make a var for the added item. parse thru the request body and find the toDoAdd that we named from the submit
     let add = req.body.toDoAdd
 
+    //if the request body list is work
     if(req.body.list === "Work"){
+        //we want to push the added item to the work list
         workItems.push(add)
+        //then redirect to the /work page
         res.redirect("/work")
     } else {
+        //add it to the regular list
         adds.push(add)
+        //send us to the home page
         res.redirect("/")
     }
 })
