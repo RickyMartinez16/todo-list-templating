@@ -26,20 +26,23 @@ app.use(express.static("public"))
 
 //ROUTES-------------------------------------------
 
+//GET route for home page
 app.get("/", (req, res) => {
     
-
+    //make a new date var
     let today = new Date();
 
+    //create options obj for date formatting
     let options = {
         weekday: "long",
         day: "numeric",
         month: "long"
     }
 
+    //convert the date to the string we want to render
     let day = today.toLocaleDateString("en-US" , options)
 
-   
+    //render the list.ejs page. pass in listTitle var as the day var wecreate. pass the newItems list as the adds var we create
     res.render("list", {listTitle: day, newListItems: adds})
 })
 
