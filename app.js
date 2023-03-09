@@ -1,8 +1,14 @@
+//rewuire use of expresss
 const express = require("express");
+//require body parser
 const bodyParser = require("body-parser")
 
+//create an instance of express
 const app = express()
 
+
+
+//make varirable to hold the items we add to the todo list
 let adds = []
 
 let workItems = []
