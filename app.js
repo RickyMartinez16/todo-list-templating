@@ -96,6 +96,16 @@ app.post("/work", (req, res) => {
     res.redirect("/work")
 })
 
+//POST route for /sam page
+app.post("/samslist", (req, res) => {
+    //workadd var to the added item to the work list
+    samAdd = req.body.toDoAdd
+    //push it into thework items array
+    samsItems.push(samAdd)
+    //bring us bacck to work page list
+    res.redirect("/samslist")
+})
+
 //run the server on port 3000
 app.listen(3000, () => {
     console.log("Server started on Port 3000!")
