@@ -61,7 +61,9 @@ app.get("/work", (req, res) => {
     res.render("list", {listTitle: "Work List", newListItems: workItems})
 })
 
+//GET route for /samslist page
 app.get("/samslist", (req, res) => {
+    //redner the "samslist" ejs file, change the list title
     res.render("samsList", {listTitle: "Sam's List", newListItems: samsItems})
 })
 
