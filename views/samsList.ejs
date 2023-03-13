@@ -4,4 +4,29 @@
 
 <p>We can put all of the stuff that Sam wants to buy </p>
 
+    <!-- title of list BOX  -->
+    <div class="box" id="heading">
+        <!-- passed in listTitle var -->
+        <h1><%= listTitle %> ToDo List ! </h1>
+    </div>
+
+    <!-- all of the TO DOs -->
+    <div class="box">
+        <!-- loop thru new list items and put them in a div with a checkbox input -->
+            <% for(let i = 0; i < newListItems.length; i++){ %>
+                <div class="item">
+                    <input type="checkbox"  >
+                    <p><%=newListItems[i]%></p> 
+                </div>
+           <% } %> 
+        
+                <!-- submit form -->
+           <form class="item" action="/" method="post">
+            <label for="fname"></label><br>
+            <input type="text" id="toDoAdd" name="toDoAdd" placeholder="new to do"  autocomplete="off"><br>
+            <button type="submit" name="list" value=<%=listTitle %>>+</button>
+          </form> 
+
+    </div>
+
 <%- include("footer"); -%>
