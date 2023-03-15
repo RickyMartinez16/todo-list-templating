@@ -106,11 +106,11 @@ app.post("/work", (req, res) => {
 
 //POST route for /sam page
 app.post("/samslist", (req, res) => {
-    //workadd var to the added item to the work list
+    //samadd var to the added item to the sam list
     samAdd = req.body.toDoAdd
-    //push it into thework items array
+    //push it into the sam items array
     samsItems.push(samAdd)
-    //bring us bacck to work page list
+    //bring us bacck to sam page list
     res.redirect("/samslist")
 })
 
