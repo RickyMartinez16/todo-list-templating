@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static("public"))
 
 
-//ROUTES-------------------------------------------
+//ROUTES-------------------------------------------------------------------------------------------------------------------------------
 
 //GET route for home page
 app.get("/", (req, res) => {
