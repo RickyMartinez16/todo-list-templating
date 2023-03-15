@@ -78,15 +78,19 @@ app.post("/", (req, res) => {
         workItems.push(add)
         //then redirect to the /work page
         res.redirect("/work")
-    } else if(req.body.list === "Sam's List"){
+
+        
+    } else if(req.body.list === "Sam's"){
         samsItems.push(add)
         //then redirect to the /samslist page
         res.redirect("/samslist")
+        
     } else {
         //add it to the regular list
         adds.push(add)
         //send us to the home page
         res.redirect("/")
+        
     }
 })
 
