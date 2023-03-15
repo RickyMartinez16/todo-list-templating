@@ -14,6 +14,8 @@ let adds = []
 //make variable to hold the items we add to the work list
 let workItems = []
 
+let samsItems = []
+
 //able to use EJS
 app.set("view engine", "ejs")
 
@@ -57,6 +59,10 @@ app.get("/about", (req, res) => {
 app.get("/work", (req, res) => {
     //render the "list" ejs file, pass in Work List for the list title var and new listItems as the workItems array
     res.render("list", {listTitle: "Work List", newListItems: workItems})
+})
+
+app.get("/samslist", (req, res) => {
+    res.render("samsList", {listTitle: "Sam's List", newListItems: samsItems})
 })
 
 //POST route for the / home route
